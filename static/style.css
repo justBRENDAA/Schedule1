@@ -1,3 +1,6 @@
+body {
+    background-color: beige;
+}
 .header {
     text-align: center;
     margin-top: 20px;
@@ -6,6 +9,25 @@
     background-color: rgb(60, 136, 94);
 }
 
+.product-selection {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;  /* no more underline when clicked */
+    color: inherit;         /* no more changing color when clicked */
+}
+
+.selection-name {
+    font-family: 'Anton SC';
+}
 .selection-image {
     width: 150px;   
     height: auto;   
@@ -14,10 +36,40 @@
 }
 
 .selection-image:hover {
-    transform: scale(1.05); 
+    transform: scale(1.2); 
     cursor: pointer;
 }
 
-.selection-name {
-    text-align: center;
+@media (max-width: 600px) {
+    .product-selection {
+        flex-direction: column; /* to stack the items vertically */
+        align-items: center;    /* to center the items horizontally */
+        gap: 30px;
+    }
+}
+
+
+
+.options-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.option-button {
+    background-color: #3c885e;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.option-button:hover {
+    background-color: #2f6c4a;
+    cursor: pointer;
 }
