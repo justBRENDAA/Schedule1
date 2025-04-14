@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule 1</title>
+    <link href='https://fonts.googleapis.com/css?family=Anton SC' rel='stylesheet'>
     <link href = "{{url_for('static', filename = 'style.css')}}" rel="stylesheet" />
 </head>
+
 <body>
-    <h1>Schedule 1</h1>
+    <div class = "container">
+        <h1 class="header">SCHEDULE 1 PRODUCT TRACKER</h1>
+
+        <div class="product-selection">
+            <!-- PRODUCT 1: WEED -->
+            <a href="/weed" class = "selection">
+                <img src="static/images/weed-img.png" alt="Weed" class="selection-image">
+                <p class="selection-name">Weed</p>
+            </a>
+
+
+            <!-- PRODUCT 2: METH -->
+            <a href="/meth" class = "selection">
+                <img src="static/images/meth-img.png" alt="Meth" class="selection-image">
+                <p class="selection-name">Meth</p>
+            </a>
+
+
+            <!-- PRODUCT 3: COCAINE -->
+            <a href="/cocaine" class = "selection">
+                <img src="static/images/cocaine-img.png" alt="Cocaine" class="selection-image">
+                <p class="selection-name">Cocaine</p>
+            </a>
+
+
+        </div>
+    </div>
 </body>
 </html>

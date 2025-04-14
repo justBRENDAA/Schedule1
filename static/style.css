@@ -1,0 +1,23 @@
+.header {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Anton SC';
+    font-size: 40px;
+    background-color: rgb(60, 136, 94);
+}
+
+.selection-image {
+    width: 150px;   
+    height: auto;   
+    border-radius: 10px; 
+    transition: transform 0.3s ease;
+}
+
+.selection-image:hover {
+    transform: scale(1.05); 
+    cursor: pointer;
+}
+
+.selection-name {
+    text-align: center;
+}
