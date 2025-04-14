@@ -85,9 +85,9 @@ class WeedStrainCreator:
         if confirm == 'y':
             sql = "INSERT INTO custom_strains (base_weed_id, ingredient_ids, name, market_price, addictiveness, sale_price, total_profit) VALUES (%s, %s, %s, %s, %s, %s, %s)"
             val = (base_strain_id, ingredient_ids, strain_name, market_price, addictiveness, sale_price, total_profit)
-            cursor.execute(sql, val)
+            self.cursor.execute(sql, val)
     
-            db.commit()
-            print(cursor.rowcount, "strain inserted")
+            self.db.commit()
+            print(self.cursor.rowcount, "strain inserted")
         else:
             print("Strain not saved.")
