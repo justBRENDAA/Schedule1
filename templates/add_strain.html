@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Weed Strain</title>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Add New Weed Strain</h1>
+
+        <form method="POST">
+            <!-- Base Strain Selection -->
+            <label for="base_strain">Select Base Strain:</label>
+            <select name="base_strain" id="base_strain">
+                {% for base in base_strains %}
+                    <option value="{{ base[0] }}">{{ base[1] }}</option>  <!-- base[0] is the ID, base[1] is the name -->
+                {% endfor %}
+            </select><br><br>
+
+            <!-- Ingredients Selection -->
+            <label for="ingredients">Select Ingredients:</label><br>
+            {% for ingredient in ingredients %}
+                <input type="checkbox" name="ingredients" value="{{ ingredient[0] }}">{{ ingredient[1] }} - ${{ ingredient[2] }}<br>
+            {% endfor %}<br>
+
+            <!-- Other Inputs -->
+            <label for="strain_name">Strain Name:</label>
+            <input type="text" name="strain_name" required><br><br>
+
+            <label for="market_price">Market Price ($):</label>
+            <input type="number" name="market_price" step="0.01" required><br><br>
+
+            <label for="addictiveness">Addictiveness (0-100):</label>
+            <input type="number" name="addictiveness" min="0" max="100" required><br><br>
+
+            <button type="submit">Add Strain</button>
+        </form>
+    </div>
+</body>
+</html>
