@@ -9,6 +9,13 @@
 </head>
 
 <body>
+    <div id = "header">
+        <img src="{{ url_for('static', filename='images/extended-logo.png') }}" alt="Schedule 1 logo" id="logo">
+        <div class="scroll-hint">
+            <img src="{{ url_for('static', filename='images/arrow.png') }}" alt="Scroll down arrow" class="arrow">
+        </div>
+    </div>
+
     <div class = "container">
         <h1 class="header">SCHEDULE 1 PRODUCT TRACKER</h1>
 
@@ -36,5 +43,6 @@
 
         </div>
     </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

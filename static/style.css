@@ -1,6 +1,56 @@
-body {
-    background-color: beige;
+html, body {
+    margin: 0;
+    padding: 0;
 }
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(images/header_background.png) center / cover;
+    height: 100vh;
+    position: relative;
+}
+
+#logo {
+    max-width: 80%;
+    max-height: 50%;
+}
+
+@media screen and (max-width: 1024px) {
+    #logo {
+        max-width: 90%;
+        max-height: 50%;
+    }
+}
+.scroll-hint {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.arrow {
+    margin-right: 2ch;
+    width: 30px;
+    animation: bounce 1.5s infinite;
+}
+
+.stop-bounce {
+    animation: none !important;
+}
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(14px);
+    }
+}
+
 .header {
     text-align: center;
     margin-top: 20px;
