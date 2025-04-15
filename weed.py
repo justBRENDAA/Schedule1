@@ -29,6 +29,32 @@ class WeedStrainCreator:
         if user_selection < 1 or user_selection > options:
             print("Invalid option")
 
+    def calc_total_profit(self, sale_price, ingredient_ids, base_strain_id):
+        ingredients = self.get_ingredients()
+        ingredient_index = [int(x) - 1 for x in ingredient_ids]  # do this because the ingredients list is 0 indexed and our ids are 1 indexed
+        ingredient_cost = sum(float(ingredients[i][2]) for i in ingredient_index)
+        
+        base_strains = self.get_base_strains()
+        base_strain_index = base_strain_id - 1  # again the list is 0 indexed and our ids are 1 indexed
+        base_strain_bud_cost = float(base_strains[base_strain_index][2])
+        
+
+        total_profit = sale_price - ingredient_cost - base_strain_bud_cost
+
+        return total_profit
+        
+        
+
+
+
+    def sql_insert(self, base_strain_id, ingredient_ids, strain_name, market_price, addictiveness, sale_price, total_profit):
+        sql = "INSERT INTO custom_strains (base_weed_id, ingredient_ids, name, market_price, addictiveness, sale_price, total_profit) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        val = (base_strain_id, ingredient_ids, strain_name, market_price, addictiveness, sale_price, total_profit)
+        self.cursor.execute(sql, val)
+        
+        self.db.commit()
+        
+
     def create_strain(self):
         # BASE STRAIN INFORMATION
         base_strains = self.get_base_strains()   # list of tuples with all base weed information
